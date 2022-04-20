@@ -6,7 +6,7 @@ import com.learn.asm.transform.FileProcess
 
 open class BaseTransform :Transform(), FileProcess {
     override fun getName(): String {
-        return MyTransform::class.java.canonicalName
+        return "BaseTransform"
     }
 
     override fun getInputTypes(): MutableSet<QualifiedContent.ContentType> {
