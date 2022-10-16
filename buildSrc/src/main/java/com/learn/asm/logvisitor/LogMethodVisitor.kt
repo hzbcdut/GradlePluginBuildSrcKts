@@ -16,6 +16,11 @@ class LogMethodVisitor(
 
     override fun onMethodEnter() {
         super.onMethodEnter()
+
+        /**
+         * Log.d("debug_asm", Log.getStackTraceString(new Throwable()));
+         * 下面的直接码指令写的就是这条语句
+         */
         visitLdcInsn("debug_asm")
         newInstance(Type.getType("Ljava/lang/Throwable;"))
         dup()
