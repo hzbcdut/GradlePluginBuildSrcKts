@@ -8,5 +8,7 @@ class MainActivity : AppCompatActivity() {
 //        Log.i("MainActivity", "onCreate:  insert bytecode ")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        A().hello()
     }
 }

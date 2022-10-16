@@ -25,6 +25,6 @@ class TimeCostClassVisitor(classVisitor: ClassVisitor) : ClassVisitor(Opcodes.AS
     override fun visitMethod(access: Int, name: String?, descriptor: String?, signature: String?, exceptions: Array<out String>?): MethodVisitor {
         pluginLog(" TimeCostClassVisitor ==> visitMethod()  name = $name   descriptor =  $descriptor in class: $className")
         val methodVisitor = super.visitMethod(access, name, descriptor, signature, exceptions)
-        return TimeCostMethodVisitor(api, methodVisitor, access, name,descriptor)
+        return TimeCostMethodVisitor2(api, methodVisitor, access, name,descriptor)
     }
 }

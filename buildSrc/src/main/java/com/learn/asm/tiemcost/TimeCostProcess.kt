@@ -10,7 +10,7 @@ object TimeCostProcess  : BytesProcess {
         val classReader = ClassReader(bytes)
         val classWriter = ClassWriter(classReader, ClassWriter.COMPUTE_MAXS)
         val injectClassVisitor = TimeCostClassVisitor(classWriter)
-        classReader.accept(injectClassVisitor, 0)
+        classReader.accept(injectClassVisitor, ClassReader.EXPAND_FRAMES)
 
         return classWriter.toByteArray()
     }

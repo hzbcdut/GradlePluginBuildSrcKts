@@ -17,6 +17,6 @@ class MyPlugin :Plugin<Project> {
 
     companion object{
         //当函数运行时间大于threshold阀值时判定为耗时函数，单位ms
-        var threshold = 60L
+        var threshold = 0L
     }
 }
