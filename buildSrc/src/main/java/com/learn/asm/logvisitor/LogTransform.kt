@@ -1,7 +1,7 @@
-package com.learn.asm.tiemcost
+package com.learn.asm.logvisitor
 
 import com.learn.asm.BaseTransform
 import com.learn.asm.transform.FileProcess
 import com.learn.asm.transform.convertToFileProcess
 
-class TimeCostTransform : BaseTransform(), FileProcess by TimeCostProcess.convertToFileProcess()
+class LogTransform : BaseTransform(), FileProcess by LogProcess.convertToFileProcess()

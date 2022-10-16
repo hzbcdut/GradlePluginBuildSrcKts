@@ -1,7 +1,7 @@
 package com.learn.asm
 
 import com.android.build.gradle.AppExtension
-import com.learn.asm.tiemcost.TimeCostTransform
+import com.learn.asm.logvisitor.LogTransform
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
@@ -12,7 +12,7 @@ class MyPlugin :Plugin<Project> {
 //        这里不知道为啥不能同时注册两个Transform
 //  Cannot add task 'transformClassesWithCustomTransformForDebug' as a task with that name already exists.
 //        appExtension?.registerTransform(MyTransform())
-        appExtension?.registerTransform(TimeCostTransform())
+        appExtension?.registerTransform(LogTransform())
     }
 
     companion object{

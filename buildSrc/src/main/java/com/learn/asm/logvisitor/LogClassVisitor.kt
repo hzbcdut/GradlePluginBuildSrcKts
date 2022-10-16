@@ -1,12 +1,13 @@
-package com.learn.asm.tiemcost
+package com.learn.asm.logvisitor
 
 import com.learn.asm.pluginLog
+import com.learn.asm.logvisitor.LogMethodVisitor
 import org.objectweb.asm.AnnotationVisitor
 import org.objectweb.asm.ClassVisitor
 import org.objectweb.asm.MethodVisitor
 import org.objectweb.asm.Opcodes
 
-class TimeCostClassVisitor(classVisitor: ClassVisitor) : ClassVisitor(Opcodes.ASM7, classVisitor) {
+class LogClassVisitor(classVisitor: ClassVisitor) : ClassVisitor(Opcodes.ASM7, classVisitor) {
 
     private var className: String = ""
     private var superName: String = ""
