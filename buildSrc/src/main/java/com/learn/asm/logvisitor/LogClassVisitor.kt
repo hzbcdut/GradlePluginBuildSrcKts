@@ -26,6 +26,6 @@ class LogClassVisitor(classVisitor: ClassVisitor) : ClassVisitor(Opcodes.ASM7, c
     override fun visitMethod(access: Int, name: String?, descriptor: String?, signature: String?, exceptions: Array<out String>?): MethodVisitor {
         pluginLog(" TimeCostClassVisitor ==> visitMethod()  name = $name   descriptor =  $descriptor in class: $className")
         val methodVisitor = super.visitMethod(access, name, descriptor, signature, exceptions)
-        return LogMethodVisitor(api, methodVisitor, access, name,descriptor)
+        return PrintMethodNameMethodVisitor(api, methodVisitor, access, name,descriptor, className, signature)
     }
 }
