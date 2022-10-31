@@ -11,4 +11,13 @@ class MainActivity : AppCompatActivity() {
 
         A().hello()
     }
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onPause() {
+        super.onPause()
+    }
+
 }

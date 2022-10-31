@@ -16,10 +16,13 @@ internal fun String.toClassName() = replace('/', '.')
 internal fun String.toInternalName() = replace('.', '/')
 
 internal val String.isValidClassName: Boolean
-    get() = endsWith(".class") &&
-            !startsWith("BuildConfig") &&
-            !startsWith("R$") &&
-            this != "R.class"
+    get() {
+        pluginLog(" 字符串  $this")
+        return endsWith(".class") &&
+                !startsWith("BuildConfig") &&
+                !startsWith("R$") &&
+                this != "R.class"
+    }
 
 internal fun printMappedInterfaceAndImpls(map: InjectImplsMap) {
     map.forEach { (k, v) -> pluginLog("$k : $v") }

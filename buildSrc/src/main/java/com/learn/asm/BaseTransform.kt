@@ -14,7 +14,8 @@ open class BaseTransform :Transform(), FileProcess {
     }
 
     override fun getScopes(): MutableSet<in QualifiedContent.Scope> {
-        return TransformManager.PROJECT_ONLY
+        // 作用范围
+        return TransformManager.SCOPE_FULL_PROJECT
     }
 
     override fun isIncremental(): Boolean {
